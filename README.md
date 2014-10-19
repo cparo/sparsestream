@@ -41,11 +41,13 @@ be done to produce a compact version of a disk image or other large file which
 is likely to contain a substantial amount of "empty" space.
 
 ### sparseencode
-Reads from a file and writes a sparse-encoded stream to stdout.
+Takes a file (or "-", to indicate stdin) as input and writes a sparse-encoded
+stream to stdout.
 
 ### sparsedecode
 Reads a sparse-encoded stream from stdin and decodes it as a sparse file at the
-specified path.
+specified path (or to stdout if "-" is specified as the output path, in which
+case the "sparse" chunks will be output as 4KiB sequences of zeros).
 
 ### sparsefilter
 Reads from a file and writes a sparse version of it at the specified path,
