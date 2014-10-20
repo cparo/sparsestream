@@ -98,10 +98,10 @@ int main(int argument_count, char* argument_values[])
 	if (batch_mode) {
 		// Batch output format:
 		// [MiB Used] [MiB Free] [MiB Total] [Percent Used]%
-		printf("%d %d %d %.1f%%\n", used_chunks / 256,
-		                          free_chunks / 256,
-		                          total_chunks / 256,
-		                          percent_used);
+		printf("%d %d %d %.1f%%\n", used_chunks  / 256,
+		                            free_chunks  / 256,
+		                            total_chunks / 256,
+		                            percent_used);
 	} else {
 		printf("Used 4KiB chunks: %11d\n", used_chunks);
 		printf("Free 4KiB chunks: %11d\n", free_chunks);
