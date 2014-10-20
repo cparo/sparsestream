@@ -58,6 +58,3 @@ join them.
 Takes a file (or "-", to indicate stdin) as input and prints statistics on
 the degree to which the input is "sparse" as would be encoded by the
 `sparseencode` utility.
-
-### deltacheck
-Prints statistics on the degree of difference between two files
