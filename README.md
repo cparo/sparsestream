@@ -35,10 +35,18 @@ whether it needs to write an empty "final" block in the case of an input file
 which ends on a 4KiB boundary.
 
 The lack of sophistication in this encoder/decoder pair makes it very light on
-CPU and memory usage, and thus excellent pre-procesors for a more heavyweight
+CPU and memory usage, and thus an excellent pre-procesor for a more heavyweight
 compression method (like gzip or lzo) to reduce the amount of work that has to
 be done to produce a compact version of a disk image or other large file which
 is likely to contain a substantial amount of "empty" space.
+
+Part of the intent of this code is as an example for teaching c to developers
+unfamiliar with the language, using a practical but straightforward problem to
+make it easy to focus on the code and what it does. Because of this, more
+commentary is included than would be typical for an implementation of this sort
+of tool - it helps to explain what is going on and why things are done the way
+the are to someone who is not yet sufficiently familiar with the language to
+see this in the code itself.
 
 ### sparseencode
 Takes a file (or "-", to indicate stdin) as input and writes a sparse-encoded
