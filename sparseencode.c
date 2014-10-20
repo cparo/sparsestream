@@ -45,11 +45,11 @@ int main(int argument_count, char* argument_values[])
 	while ((bytes_read = read(source,
 	                          buffer + bytes_read,
 	                          bytes_left)) > 0) {
-		bytes_left -= bytes_read;
-		// If the buffer is full, process it. Otherwise, loop back around to
-		// get some more data to fill it (or find that we've run out of input
-		// to process).
-		if (bytes_left == 0) {
+		// If the buffer is full (there are no bytes left in the buffer beyond
+		// what we have read into it), process it. Otherwise, loop back around
+		// to get some more data to fill it (or find that we've run out of
+		// input to process).
+		if (!(bytes_left -= bytes_read)) {
 			// Check buffer and output index and contents if non-zero contents
 			// found.
 			if (buffer_is_used()) {
